@@ -1,0 +1,142 @@
+require:
+  - rubocop-performance
+  - rubocop-rspec
+
+AllCops:
+  Exclude:
+    - 'db/**/*'
+    - 'bin/**/*'
+    - 'Gemfile'
+    - 'test/**/*'
+    - 'node_modules/**/*'
+    - 'gems/**/*'
+  TargetRubyVersion: 2.6
+  NewCops: enable
+
+Performance:
+  Enabled: true
+
+Performance/Detect:
+  Enabled: true
+  SafeAutoCorrect: false
+
+Style/Documentation:
+  Enabled: false
+
+Layout/DotPosition:
+  EnforcedStyle: trailing
+
+Layout/CaseIndentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
+
+Layout/LineLength:
+  Max: 100
+
+Style/TrailingCommaInArrayLiteral:
+  Enabled: false
+
+Performance/RedundantMerge:
+  Enabled: false
+
+Metrics/ClassLength:
+  Max: 200
+
+Metrics/AbcSize:
+  Max: 60
+
+Metrics/MethodLength:
+  Max: 25
+
+Metrics/BlockLength:
+  Exclude:
+    - 'Rakefile'
+    - '**/*.rake'
+    - 'spec/**/*.rb'
+    - 'app/core/container.rb'
+
+Layout/EndAlignment:
+  EnforcedStyleAlignWith: variable
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Layout/HashAlignment:
+  Enabled: false
+
+Style/HashSyntax:
+  EnforcedShorthandSyntax: never
+
+Layout/TrailingEmptyLines:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Style/SymbolArray:
+  Enabled: false
+
+Style/WordArray:
+  Enabled: false
+
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: indented
+
+Layout/ParameterAlignment:
+  Enabled: false
+
+Layout/ArgumentAlignment:
+  EnforcedStyle: with_fixed_indentation
+
+Layout/EmptyLineAfterGuardClause:
+  Enabled: false
+
+Layout/EmptyLinesAroundBlockBody:
+  Enabled: false
+
+Performance/Casecmp:
+  Enabled: false
+
+Layout/ArrayAlignment:
+  Enabled: false
+
+Style/BlockComments:
+  Enabled: false
+
+Layout/TrailingWhitespace:
+  Enabled: false
+
+Layout/EmptyLinesAroundClassBody:
+  Enabled: false
+
+Naming/MemoizedInstanceVariableName:
+  Enabled: false
+
+Naming/VariableNumber:
+  Enabled: false
+
+RSpec/VerifiedDoubles:
+  Enabled: false
+
+RSpec/MultipleMemoizedHelpers:
+  Max: 10
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/BeforeAfterAll:
+  Enabled: false
+
+RSpec/InstanceVariable:
+  Enabled: false
+
+RSpec/NamedSubject:
+  Enabled: false
