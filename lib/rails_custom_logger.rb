@@ -12,7 +12,7 @@ module RailsCustomLogger
 
     def call(severity, timestamp, progname, msg)
       message = {
-        timestamp: timestamp.utc.strftime('%Y-%m-%dT%H:%M:%S.%L%:z'),
+        timestamp: timestamp.utc.strftime('%Y-%m-%dT%H:%M:%S.%6N%:z'),
         level: severity,
         progname: progname,
         message: msg,
