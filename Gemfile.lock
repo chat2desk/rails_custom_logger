@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rails_custom_logger (1.0.1)
+    rails_custom_logger (1.0.0)
 
 GEM
   remote: https://rubygems.org/
