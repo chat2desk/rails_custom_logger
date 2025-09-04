@@ -15,7 +15,7 @@ module RailsCustomLogger
         time: timestamp.utc.strftime('%Y-%m-%dT%H:%M:%S.%6N%:z'),
         level: severity,
         progname: progname,
-        message: msg,
+        message: sanitize_value!(msg),
         **build_context
       }
       "#{JSON.dump(message)}\n"
@@ -37,6 +37,12 @@ module RailsCustomLogger
       request_id = Thread.current.object_id if request_id.nil?
 
       { request_id: request_id, tags: current_tags }
+    end
+
+    def sanitize_value!(obj)
+      return obj unless obj.is_a?(String)
+      # need to check performance impact!!!!
+      obj.encode!('UTF-8', invalid: :replace, undef: :replace, replace: '�')
     end
   end
 end

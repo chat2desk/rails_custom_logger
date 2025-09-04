@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rails_custom_logger (0.1.0)
+    rails_custom_logger (1.0.1)
 
 GEM
   remote: https://rubygems.org/
@@ -58,6 +58,7 @@ GEM
 
 PLATFORMS
   aarch64-linux
+  arm64-darwin-23
 
 DEPENDENCIES
   rails_custom_logger!
@@ -67,4 +68,4 @@ DEPENDENCIES
   rubocop-rspec
 
 BUNDLED WITH
-   2.4.13
+   2.5.17
