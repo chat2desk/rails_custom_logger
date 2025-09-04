@@ -41,8 +41,14 @@ module RailsCustomLogger
 
     def sanitize_value!(obj)
       return obj unless obj.is_a?(String)
-      # need to check performance impact!!!!
-      obj.encode!('UTF-8', invalid: :replace, undef: :replace, replace: '�')
+      # если уже валидная UTF-8 строка — ничего не делать
+      return obj if obj.encoding == Encoding::UTF_8 && obj.valid_encoding?
+
+      if obj.frozen?
+        obj.encode('UTF-8', invalid: :replace, undef: :replace, replace: '�')
+      else
+        obj.encode!('UTF-8', invalid: :replace, undef: :replace, replace: '�')
+      end
     end
   end
 end
